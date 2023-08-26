@@ -19,13 +19,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="bg-slate-950 w-full mx-auto my-auto text-slate-200"
+      className="bg-slate-950 text-slate-200"
     >
       <body className={inter.className}>
         <NavBar />
-        <div className="flex gap-4 pt-2">
+        <div className="flex pt-1">
           <Sidebar />
-          <div>{children}</div>
+          <div className="w-full px-4 pt-7">{children}</div>
         </div>
       </body>
     </html>

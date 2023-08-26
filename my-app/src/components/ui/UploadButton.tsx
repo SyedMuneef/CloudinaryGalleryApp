@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { CldUploadButton } from "next-cloudinary";
 import { CldImage } from "next-cloudinary";
+import { Button } from "./Button";
 
 function UploadButton() {
   const [imageId, setImageId] = useState("");
@@ -11,27 +12,14 @@ function UploadButton() {
   }
 
   return (
-    <>
-      <div className="bg-green-800">
-        <CldUploadButton
-          onUpload={(result: any) => {
-            setImageId(result.info.public_id);
-          }}
-          uploadPreset="byxgiew7"
-        />
-      </div>
-      <div>
-        {imageId && (
-          <CldImage
-            width="200"
-            height="600"
-            src={imageId}
-            sizes="100vw"
-            alt="Description of my image"
-          />
-        )}
-      </div>
-    </>
+    <Button asChild>
+    <CldUploadButton
+      onUpload={(result: any) => {
+        setImageId(result.info.public_id);
+      }}
+      uploadPreset="byxgiew7"
+    />
+    </Button>
   );
 }
 
