@@ -7,7 +7,7 @@ const GalleryPage = () => {
     <section>
       <div className="flex justify-between">
         <h1 className="font-bold text-4xl">Gallery</h1>
-        <Button variant={"destructive"}> is it runnign</Button> <UploadButton />
+        <UploadButton />
       </div>
     </section>
   );
