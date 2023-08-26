@@ -12,7 +12,7 @@ function UploadButton() {
 
   return (
     <>
-      <div>
+      <div className="bg-green-800">
         <CldUploadButton
           onUpload={(result: any) => {
             setImageId(result.info.public_id);
@@ -23,8 +23,8 @@ function UploadButton() {
       <div>
         {imageId && (
           <CldImage
-            width="300"
-            height="300"
+            width="200"
+            height="600"
             src={imageId}
             sizes="100vw"
             alt="Description of my image"
