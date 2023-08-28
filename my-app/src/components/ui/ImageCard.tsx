@@ -1,23 +1,9 @@
 "use client";
+import { CldImage } from "next-cloudinary";
 import React from "react";
 
-const ImageCard = () => {
-  return (
-    <>
-      {" "}
-      <div>
-        {/* {imageId && (
-          <CldImage
-            width="200"
-            height="600"
-            src={imageId}
-            sizes="100vw"
-            alt="Description of my image"
-          />
-       )}*/}
-      </div>
-    </>
-  );
+const ImageCard = (props: any) => {
+  return <CldImage {...props} />;
 };
 
 export default ImageCard;
