@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/Button";
 import { Image, Folder, Heart } from "lucide-react";
+import Link from "next/link";
 
 const Sidebar = () => {
   return (
@@ -11,21 +12,34 @@ const Sidebar = () => {
             Manage
           </h2>
           <div className="space-y-1">
-            <Button
-              variant="secondary"
-              className="w-full justify-start flex gap-2"
-            >
-              <Image className="" />
-              Gallery
-            </Button>
-            <Button variant="ghost" className="w-full justify-start flex gap-2">
-              <Heart />
-              Favorites
-            </Button>
-            <Button variant="ghost" className="w-full justify-start flex gap-2">
-              <Folder />
-              Albums
-            </Button>
+            <Link href={"gallery"}>
+              {" "}
+              <Button
+                variant="ghost"
+                className="w-full justify-start flex gap-2"
+              >
+                <Image/>
+                Gallery
+              </Button>
+            </Link>
+            <Link href={"favorites"}>
+              <Button
+                variant="ghost"
+                className="w-full justify-start flex gap-2"
+              >
+                <Heart />
+                Favorites
+              </Button>
+            </Link>
+            <Link href={"/"}>
+              <Button
+                variant="ghost"
+                className="w-full justify-start flex gap-2"
+              >
+                <Folder />
+                Albums
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

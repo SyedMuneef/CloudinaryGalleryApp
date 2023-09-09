@@ -14,7 +14,7 @@ function UploadButton() {
   }
 
   return (
-    <Button asChild>
+    <Button asChild className="cursor-pointer">
       <CldUploadButton
         onUpload={(result) => {
           let res = result as IUploadResult;
