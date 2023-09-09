@@ -24,6 +24,7 @@ const FavoritePage = async () => {
           {results.resources.map((result) => (
             <div className="break-inside-avoid ">
               <ImageCard
+                path="/favorites"
                 key={result.public_id}
                 imageData={result}
                 width="300"

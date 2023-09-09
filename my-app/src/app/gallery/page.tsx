@@ -28,8 +28,8 @@ const GalleryPage = async () => {
           {results.resources.map((result) => (
             <div className="break-inside-avoid ">
               <ImageCard
+                path="/gallery"
                 key={result.public_id}
-                
                 imageData={result}
                 width="300"
                 height="300"

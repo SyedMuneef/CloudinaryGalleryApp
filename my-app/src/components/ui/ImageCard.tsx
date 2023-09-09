@@ -4,8 +4,9 @@ import { CldImage } from "next-cloudinary";
 import React, { startTransition, useTransition } from "react";
 import { FavoriteTagAction } from "@/app/gallery/action";
 import { searcResult } from "@/app/gallery/page";
+import path from "path";
 
-const ImageCard = (props: any & { imageData: searcResult }) => {
+const ImageCard = (props: any & { imageData: searcResult; path: string }) => {
   const [transition, startTransition] = useTransition();
   const { imageData } = props;
   const isFavorited = imageData.tags.includes("favorite");
@@ -17,7 +18,7 @@ const ImageCard = (props: any & { imageData: searcResult }) => {
         <Heart
           onClick={() => {
             startTransition(() => {
-              FavoriteTagAction(imageData.public_id, false);
+              FavoriteTagAction(imageData.public_id, false, props.path);
             });
           }}
           className=" absolute top-2 right-2 cursor-pointer fill-red-500 text-red-500"
@@ -26,7 +27,7 @@ const ImageCard = (props: any & { imageData: searcResult }) => {
         <Heart
           onClick={() => {
             startTransition(() => {
-              FavoriteTagAction(imageData.public_id, true);
+              FavoriteTagAction(imageData.public_id, true, props.path);
             });
           }}
           className=" absolute top-2 right-2 cursor-pointer hover:text-red-500 duration-200"
